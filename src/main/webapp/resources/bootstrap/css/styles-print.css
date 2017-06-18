@@ -1,0 +1,93 @@
+/*
+    Document   : styles-print
+    Created on : 01/07/2013, 17:26:07
+    Author     : Max
+    Description:
+        O documento de estilos em cascata abaixo tem como finalidade a exibição
+dos dados em formatos de impressão.
+*/
+
+/*Reset*/
+header{
+    display: none;
+}
+footer{
+    display: none;
+}
+nav{
+    display: none;
+}
+.nav{
+    display: none
+}
+
+* {
+    background:transparent;
+    color:#000;
+    text-shadow:none;
+    filter:none;
+    -ms-filter:none;
+    -webkit-print-color-adjust: exact;
+}
+
+body {
+    margin:0;
+    line-height: 1.4em;
+}
+
+h1{
+    color: #555;
+}
+
+
+.container{
+    padding: 1cm;
+}
+
+.page-break-avoid{
+    page-break-inside: avoid;
+}
+
+.table{
+    border: #555 solid 1pt;
+    border-radius: 0;
+    margin-bottom: 1cm;
+}
+.table tr{
+    page-break-inside: avoid;
+}
+
+.table-bordered thead:first-child tr:first-child > th:first-child, .table-bordered tbody:first-child tr:first-child > td:first-child, .table-bordered tbody:first-child tr:first-child > th:first-child{
+    border-radius: 0;
+}
+.table-bordered thead:last-child tr:last-child > th:first-child, .table-bordered tbody:last-child tr:last-child > td:first-child, .table-bordered tbody:last-child tr:last-child > th:first-child, .table-bordered tfoot:last-child tr:last-child > td:first-child, .table-bordered tfoot:last-child tr:last-child > th:first-child{
+    border-radius: 0;
+}
+.table-bordered th,
+.table-bordered td{
+    border-color: #555;
+    border-radius: 0;
+}
+.table th{
+    background-color: #ddd !important; 
+}
+
+input[type="text"],
+input[type="datetime-local"],
+input[type="number"],
+select{
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+br.page-break{
+    page-break-after: always;
+}
+abbr[title]{
+    text-decoration: none;
+    border-bottom: none;
+}
+abbr[title]:after{
+    content: initial;
+}
